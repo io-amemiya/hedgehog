@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MainMenuComponent implements OnInit {
 
+  isFirstOpen = true;
+
   ngOnInit() {
 
   }

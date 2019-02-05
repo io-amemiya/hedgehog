@@ -64,14 +64,11 @@
   <!-- メインコンテンツ -->
   <div class="row">
     <!-- メニューカテゴリー -->
-    <div class="col-sm p-0 m-2">
-      <div class="card bg-light w-100 h-100">
-        <div class="card-header">
-          <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
-        </div>
-        <div class="card-body">
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+    <div class="col p-0 m-2">
+      <accordion>
+        <accordion-group #group [isOpen]="isFirstOpen">
+          <div accordion-heading class="menu-title pointerCursor">
+            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
           </div>
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
@@ -85,27 +82,15 @@
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
           </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-        </div>
-      </div>
+        </accordion-group>
+      </accordion>
     </div>
     <!-- メニューカテゴリー -->
     <div class="col-sm p-0 m-2">
-      <div class="card bg-light w-100 h-100">
-        <div class="card-header">
-          <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
-        </div>
-        <div class="card-body ">
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+      <accordion>
+        <accordion-group #group [isOpen]="isFirstOpen">
+          <div accordion-heading class="menu-title pointerCursor">
+            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
           </div>
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
@@ -131,31 +116,31 @@
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
           </div>
-        </div>
-      </div>
+        </accordion-group>
+      </accordion>
     </div>
     <!-- メニューカテゴリー -->
-    <div class="col-sm p-0 m-2">
-      <div class="card bg-light w-100 mb-3">
-        <div class="card-header">
-          <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
-        </div>
-        <div class="card-body">
+    <div class="col-sm p-0">
+      <accordion class="m-2">
+        <accordion-group #group [isOpen]="isFirstOpen">
+          <div accordion-heading class="menu-title pointerCursor">
+            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
+          </div>
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
           </div>
-        </div>
-      </div>
-      <div class="card bg-light w-100 mb-3">
-        <div class="card-header">
-          <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
-        </div>
-        <div class="card-body">
+        </accordion-group>
+      </accordion>
+      <accordion class="m-2">
+        <accordion-group #group [isOpen]="isFirstOpen">
+          <div accordion-heading class="menu-title pointerCursor">
+            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
+          </div>
           <div class="text-center mb-2">
             <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
           </div>
-        </div>
-      </div>
+        </accordion-group>
+      </accordion>
     </div>
   </div>
 </div>
