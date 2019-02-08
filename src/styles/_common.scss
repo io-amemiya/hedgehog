@@ -1,0 +1,50 @@
+body {
+  padding-top: 95px;
+}
+
+.nav-style {
+  box-shadow: 0 0px 2px rgba(0,0,0,0.1) inset;
+}
+
+.toggle-style {
+  margin-top: 56px;
+  position: relative;
+  border-top: 1px solid #eee;
+  background-color: white;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.1);
+  .btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.icon-color {
+  color: #17a2b8
+}
+
+.balloon-top:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 25%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-bottom: 13px solid #FFF;
+  z-index: 20;
+}
+
+.balloon-top:after {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 25%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-bottom: 14px solid rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.balloon-top p {
+  margin: 0;
+  padding: 0;
+}

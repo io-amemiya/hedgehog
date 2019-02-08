@@ -1,24 +1,47 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">
-    <i class="fas fa-globe mr-2"></i>
-    株式会社〇〇 勤怠管理システム
-  </a>
-  <div class="collapse navbar-collapse justify-content-end">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <button class="btn btn-light float-right">
-            <i class="fas fa-cogs fa-lg"></i>
-          </button>
-        </a>
+<nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top nav-style">
+  <div>
+    <a href="#" class="navbar-brand">
+      <span class="text-primary">
+        <i class="fas fa-globe text-secondary mr-2"></i>
+        <strong>株式会社イオ　社内管理システム</strong>　
+      </span>
+    </a>
+  </div>
+</nav>
+<div class="bg-white toggle-style w-100 fixed-top">
+  <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-white text-primary"
+      aria-controls="dropdown-basic">
+      <i class="fas fa-bars mr-2 icon-color"></i>
+      <span class="small"><strong>Shortcut Menu</strong></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow-sm mt-2 ml-2 balloon-top" role="menu"
+      aria-labelledby="button-basic">
+      <li class="dropdown-header"><i class="fas fa-user mr-2"></i>ログイン情報</li>
+      <div class="small p-3">
+        <p class="small mb-2 font-weight-bolder">a_amemiya</p>
+        <p class="small mb-2">社員No. 0094</p>
+        <p class="small mb-2">雨宮　あすか</p>
+        <p class="small mb-2">システム本部2部1課</p>
+        <span class="badge badge-pill badge-info text-white">パスワード期限</span>
+        <p class="small">11/11（残り00日）</p>
+      </div>
+      <li class="divider dropdown-divider"></li>
+      <li class="dropdown-header"><i class="fas fa-link mr-2"></i>ショートカット</li>
+      <li role="menuitem"><a class="dropdown-item" href="#">休暇申請</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">休暇付与</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">交通費申請</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">パスワード変更</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">
+          <i class="fas fa-sign-out-alt mr-1 icon-color"></i>ログアウト</a>
       </li>
     </ul>
   </div>
-</nav>
+  <a class="text-primary small float-right mt-2 mr-3" href="#">
+    <i class="fas fa-sign-out-alt mr-1 icon-color"></i><strong>Log Out</strong>
+  </a>
+</div>
 <div class="p-3">
   <router-outlet></router-outlet>
 </div>

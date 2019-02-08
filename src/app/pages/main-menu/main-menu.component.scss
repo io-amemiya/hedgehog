@@ -1,3 +1,14 @@
+// メニューの幅
+.menu-title {
+  width: 200px;
+}
+
+// メニューボタンの幅
 .menu-btn {
-  width: 150px;
+  width: 90%;
+}
+
+// マウスポインターを指マークにする
+.pointerCursor {
+    cursor: pointer;
 }
