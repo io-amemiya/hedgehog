@@ -2,142 +2,153 @@
   <!-- ヘッダーコンテンツ -->
   <div class="row">
     <!-- お知らせ欄 -->
-    <div class="col-sm-5 p-0 m-2">
-      <div class="card bg-light w-100 h-100">
-        <div class="card-header">
-          <i class="far fa-comment fa-lg mr-2"></i>お知らせ
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            〇〇〇〇の運用方法が変更になりました。<br>
-            詳細については各課上長へ確認をお願いします。
-          </p>
-          <p class="card-text float-right small">
-            〇〇 〇〇　019/01/01 12:00
-          </p>
-        </div>
+    <div class="card col p-0 m-2">
+      <div class="card-header text-primary font-weight-bolder">
+        <i class="fas fa-info-circle icon-color mr-2"></i>お知らせ
+      </div>
+      <div class="card-body d-flex flex-column align-items-start">
+        <p class="card-text">
+          〇〇〇〇の運用方法が変更になりました。<br>
+          詳細については××××へ確認をお願いします。
+        </p>
+      </div>
+      <div class="card-footer small text-muted text-right">
+        更新者：〇〇 〇〇（2019/01/01 12:00）
       </div>
     </div>
     <!-- 更新履歴 -->
-    <div class="col-sm p-0 m-2">
-      <div class="card bg-light w-100 h-100">
-        <div class="card-header">
-          <i class="fas fa-edit fa-lg mr-2"></i>更新履歴
+    <div class="card col-lg-7 p-0 m-2">
+      <div class="card-header text-primary font-weight-bolder">
+        <i class="fas fa-edit icon-color mr-2"></i>更新履歴
+      </div>
+      <div class="card-body d-flex flex-column align-items-start">
+        <div class="row">
+          <div class="col-lg-4 icon-color">
+            <p style="width:200px;">2019/01/01 12:00<span
+                class="badge badge-pill badge-warning text-white ml-2">更新</span></p>
+          </div>
+          <div class="col-lg-8">
+            〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
+          </div>
         </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              2019/01/01 12:00
-            </div>
-            <div class="col-12 col-lg-9">
-              〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
-            </div>
+        <div class="row">
+          <div class="col-lg-4 icon-color">
+            <p style="width:200px;">2019/01/01 12:00<span
+                class="badge badge-pill badge-success text-white ml-2">追加</span></p>
           </div>
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              2019/01/01 12:00
-            </div>
-            <div class="col-12 col-lg-9">
-              〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
-            </div>
+          <div class="col-lg-8">
+            〇〇 〇〇さんが<mark>×××××</mark>を追加しました。
           </div>
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              2019/01/01 12:00
-            </div>
-            <div class="col-12 col-lg-9">
-              〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 icon-color">
+            <p style="width:200px;">2019/01/01 12:00<span
+                class="badge badge-pill badge-warning text-white ml-2">更新</span></p>
           </div>
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              2019/01/01 12:00
-            </div>
-            <div class="col-12 col-lg-9">
-              〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
-            </div>
+          <div class="col-lg-8">
+            〇〇 〇〇さんが<mark>×××××</mark>を更新しました。
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- メインコンテンツ -->
+  <!-- メニューコンテンツ -->
   <div class="row">
-    <!-- メニューカテゴリー -->
-    <div class="col p-0 m-2">
-      <accordion>
-        <accordion-group #group [isOpen]="isFirstOpen">
-          <div accordion-heading class="menu-title pointerCursor">
-            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
+    <div class="col p-0">
+      <accordion class="m-2">
+        <accordion-group #group [isOpen]="true">
+          <div accordion-heading class="menu-title text-primary font-weight-bolder pointerCursor"
+            (click)="onAccordion($event, 1)">
+            <i [ngClass]="showDetail.menu1 ? 'fas fa-angle-down fa-lg' : 'fas fa-angle-right fa-lg'"
+              class="icon-color mr-2"></i>申請・承認メニュー
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">勤務時間申請</button>
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">残業時間申請</button>
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">休暇申請</button>
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">休出申請</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">出張旅費申請</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">スキルシート更新</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">研修・セミナー受講歴</button>
           </div>
         </accordion-group>
       </accordion>
     </div>
-    <!-- メニューカテゴリー -->
-    <div class="col-sm p-0 m-2">
-      <accordion>
-        <accordion-group #group [isOpen]="isFirstOpen">
-          <div accordion-heading class="menu-title pointerCursor">
-            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
-          </div>
-        </accordion-group>
-      </accordion>
-    </div>
-    <!-- メニューカテゴリー -->
     <div class="col-sm p-0">
       <accordion class="m-2">
-        <accordion-group #group [isOpen]="isFirstOpen">
-          <div accordion-heading class="menu-title pointerCursor">
-            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
+        <accordion-group #group [isOpen]="true">
+          <div accordion-heading class="menu-title text-primary font-weight-bolder pointerCursor"
+            (click)="onAccordion($event, 2)">
+            <i [ngClass]="showDetail.menu2 ? 'fas fa-angle-down fa-lg' : 'fas fa-angle-right fa-lg'"
+              class="icon-color mr-2"></i>メンテナンスメニュー
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">ノー残業デー変更</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">要員一覧表作成</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">要員・端金</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">就業時間設定</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">勤務時間計算単位</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">権限設定</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">休暇付与</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">休日・祝日登録</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">勤務分析</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">パスワード変更</button>
+          </div>
+        </accordion-group>
+      </accordion>
+    </div>
+    <div class="col-sm p-0">
+      <accordion class="m-2 mb-3">
+        <accordion-group #group [isOpen]="true">
+          <div accordion-heading class="menu-title text-primary font-weight-bolder pointerCursor"
+            (click)="onAccordion($event, 3)">
+            <i [ngClass]="showDetail.menu3 ? 'fas fa-angle-down fa-lg' : 'fas fa-angle-right fa-lg'"
+              class="icon-color mr-2"></i>分析メニュー
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-info menu-btn">勤務分析</button>
           </div>
         </accordion-group>
       </accordion>
       <accordion class="m-2">
-        <accordion-group #group [isOpen]="isFirstOpen">
-          <div accordion-heading class="menu-title pointerCursor">
-            <i class="fas fa-angle-down fa-lg mr-2"></i>メニュー
+        <accordion-group #group [isOpen]="true">
+          <div accordion-heading class="menu-title text-primary font-weight-bolder pointerCursor"
+            (click)="onAccordion($event, 4)">
+            <i [ngClass]="showDetail.menu4 ? 'fas fa-angle-down fa-lg' : 'fas fa-angle-right fa-lg'"
+              class="icon-color mr-2"></i>社内情報
           </div>
           <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-secondary menu-btn">選択肢</button>
+            <button type="button" class="btn btn-info menu-btn">年間カレンダー</button>
           </div>
         </accordion-group>
       </accordion>

@@ -1,6 +1,7 @@
 // module
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AccordionModule, CollapseModule, PopoverModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -11,6 +12,7 @@ import { MainMenuComponent } from '../app/pages/main-menu/main-menu.component';
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     AccordionModule.forRoot(),
