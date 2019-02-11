@@ -8,6 +8,8 @@ import { AccordionModule, CollapseModule, PopoverModule, BsDropdownModule } from
 // component
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../app/pages/main-menu/main-menu.component';
+import { WorkingTimeMenuComponent } from '../app/pages/app-recog/working-time-menu/working-time-menu.component';
+import { WorkingTimeComponent } from '../app/pages/app-recog/working-time/working-time.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,9 @@ import { MainMenuComponent } from '../app/pages/main-menu/main-menu.component';
   ],
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    WorkingTimeMenuComponent,
+    WorkingTimeComponent
   ],
   providers: [
 
