@@ -1,0 +1,30 @@
+// カレンダーレイアウト
+.calendar {
+  .week {
+    width: 50px;
+  }
+  .date {
+    width: 40px;
+  }
+  .kind {
+    width: 100px;
+  }
+  .startTime {
+    width: 100px;
+  }
+  .endTime {
+    width: 100px;
+  }
+  .workingTime {
+    width: 50px;
+  }
+  .nightTime {
+    width: 50px;
+  }
+  .breakTime {
+    width: 100px;
+  }
+  .memo {
+    width: 100px;
+  }
+}
