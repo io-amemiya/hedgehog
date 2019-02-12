@@ -48,11 +48,61 @@
                 </div>
             </div>
             <hr>
-            <div class="card-body mb-3">
-                <h5 class="card-title text-primary mb-4"><i class="far fa-calendar-alt icon-color mr-2"></i>勤怠情報（１２月）
-                </h5>
-                <div class="row">
-                    <div class="col">test</div>
+            <div class="card-body">
+                <h5 class="card-title text-primary mb-4"><i
+                        class="far fa-calendar-alt icon-color mr-2"></i>勤怠情報（{{ myYear }} 年 {{ myMonth+1 }} 月）</h5>
+                <div class="card-body d-flex flex-column align-items-start">
+                    <table class="table table-sm table-hover calendar">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="week">曜日</th>
+                                <th class="date">日</th>
+                                <th class="kind">届出</th>
+                                <th>出勤</th>
+                                <th>退勤</th>
+                                <th>勤務</th>
+                                <th>深夜</th>
+                                <th>遅刻等</th>
+                                <th>備考</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let tmp of myTable; index as i">
+                                <ng-container *ngIf="tmp !== 0">
+                                    <tr>
+                                        <!-- 曜日のスタイル設定 -->
+                                        <ng-container [ngSwitch]=i%7>
+                                            <td *ngSwitchCase=0 class="text-danger">
+                                                <strong>{{myWeekTbl[i%7]}}</strong></td>
+                                            <td *ngSwitchCase=6 class="text-primary">
+                                                <strong>{{myWeekTbl[i%7]}}</strong></td>
+                                            <td *ngSwitchDefault class="text-black-50">
+                                                <strong>{{myWeekTbl[i%7]}}</strong></td>
+                                        </ng-container>
+                                        <!-- 日付 -->
+                                        <td scope="row"><strong>{{ tmp }}</strong></td>
+                                        <td>
+                                            <select class="custom-select">
+                                                <option selected></option>
+                                                <ng-container [ngSwitch]=i%7>
+                                                    <option *ngSwitchCase=0 value="1" selected>休日</option>
+                                                    <option *ngSwitchCase=6 value="1" selected>休日</option>
+                                                    <option *ngSwitchDefault value="1">休日</option>
+                                                </ng-container>
+                                                <option value="2">その他</option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text" class="form-control" id="startTime{{i}}"></td>
+                                        <td><input type="text" class="form-control" id="endTime{{i}}"></td>
+                                        <td class="workingTime">8h</td>
+                                        <td class="nightTime">0h</td>
+                                        <td><input type="text" class="form-control" id="breakTime{{i}}"></td>
+                                        <td><input type="text" class="form-control" id="memo{{i}}"></td>
+                                    </tr>
+                                </ng-container>
+                            </ng-container>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <hr>
